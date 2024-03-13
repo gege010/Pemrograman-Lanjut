@@ -49,12 +49,12 @@ public class perpustakaanUI {
                     break;
             }
             sc.nextLine();
-            System.out.println("Apakah anda ingin melanjutkan : (Y/N)");
+            System.out.print("Apakah anda ingin melanjutkan (Y/N) : ");
             pilih = sc.nextLine();
         } while(pilih.equalsIgnoreCase("Y"));
 
         String cek;
-        System.out.println("Apakah anda ingin mengecek kesamaan atribut buku?");
+        System.out.println("Apakah anda ingin mengecek kesamaan atribut buku (Y/N) ?");
         cek = sc.nextLine();
 
         if(cek.equalsIgnoreCase("y")){
@@ -67,6 +67,33 @@ public class perpustakaanUI {
             if (perpustakaan.cekBuku(judul1, judul2)) {
                 double persentase = perpustakaan.persentaseKesamaan(judul1, judul2);
                 System.out.println("Persentase kesamaan atribut antara " + judul1 + " dan " + judul2 + " adalah: " + persentase + "%");
+                System.out.println("\nAtribut yang sama : ");
+                for (int i = 0; i < perpustakaan.copy().length; i++) {
+                    if(perpustakaan.copy()[i]!=null){
+                        switch (i) {
+                            case 1:
+                                System.out.print("Halaman      : ");
+                                break;
+                            case 2:
+                                System.out.print("Penulis      : ");
+                                break;
+                            case 3:
+                                System.out.print("Penerbit     : ");
+                                break;
+                            case 4:
+                                System.out.print("Tahun Terbit : ");
+                                break;
+                            case 5:
+                                System.out.print("Sinopsis     : ");
+                                break;
+                            default:
+                                System.out.print("Error");
+                                break;
+                        }
+                        System.out.println(perpustakaan.copy()[i]);
+                    }
+                    
+                }
             } else {
                 System.out.println("Salah satu atau kedua buku tidak ada dalam perpustakaan.");
             }

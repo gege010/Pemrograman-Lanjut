@@ -6,6 +6,7 @@ public class perpustakaanClass {
     private String[][] bukuSejarah;
     private String[][] bukuPsikologi;
     private String[][] bukuAgama;
+    private String[] atributSama;
 
     public perpustakaanClass(){
         bukuFiksi = new String[][] {
@@ -63,6 +64,9 @@ public class perpustakaanClass {
             {"Dhammapada", "288", "Buddha Gautama", "Vihara Bodhigiri", "2020", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum."},
             {"Tao Te Ching", "160", "Laozi", "Spring", "2019", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus dictum."}
         };
+
+        atributSama = new String[6];
+
     }
 
     public String[][] getFiksi() {
@@ -292,10 +296,10 @@ public class perpustakaanClass {
                 }
             }
         }
-
         if (buku1 != null && buku2 != null) {
             for (int i = 0; i < buku1.length; i++) {
                 if (buku1[i].equalsIgnoreCase(buku2[i])) {
+                    atributSama[i] = buku1[i];
                     similarity++;
                 }
             }
@@ -311,4 +315,5 @@ public class perpustakaanClass {
         return ((double) kesamaan / totalAtribut) * 100;
     }
 
+    public String[] copy(){return atributSama;}
 }
