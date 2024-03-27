@@ -5,8 +5,8 @@ public class mainHero {
         Scanner sc = new Scanner(System.in);
         classHero hero1 = new classHero();
         String name1, name2;
-        double hp1,attack1,defense1;
-        double hp2,attack2,defense2;
+        double hp1,attack1,defense1,defense1_0;
+        double hp2,attack2,defense2,defense2_0;
         System.out.print("Permainan adu hero\n"+"Player 1 : Silakan masukkan hero Anda!\n"+
         "Untuk bagian angka, mohon masukkan angka antara 0 hingga 500!\n"+"====================================================\n");
         do{
@@ -18,6 +18,7 @@ public class mainHero {
             attack1 = sc.nextDouble();
             System.out.printf("%-15s: ", "Defense");
             defense1 = sc.nextDouble();
+            defense1_0=defense1;
             System.out.println();
             hero1.setName(name1);
             hero1.setHp(hp1);
@@ -39,6 +40,7 @@ public class mainHero {
             attack2 = sc.nextDouble();
             System.out.printf("%-15s: ", "Defense");
             defense2 = sc.nextDouble();
+            defense2_0=defense2;
             if(hp2>500||attack2>500||defense2>500){
                 System.out.println("Silakan masukkan ulang!");
             }
@@ -65,7 +67,7 @@ public class mainHero {
             System.out.println("Round " + round++);
             System.out.println(hero2.getName() + " menyerang " + hero1.getName()+"\n");
             System.out.println(hero2.getName() + " menyerang sebesar " + hero2.getAttack());
-            System.out.println(hero1.getName() + " memiliki pertahanan sebesar " + hero1.getDefense());
+            System.out.println(hero1.getName() + " memiliki pertahanan sebesar " + defense1_0);
             System.out.println("Health dari " + hero1.getName() + " saat ini " + hp1+"\n");
             if (hero1.getHp() == 0) {
                 win = hero2.getName();
@@ -86,7 +88,7 @@ public class mainHero {
             hero2.setDefense(defense2);
             System.out.println(hero1.getName() + " menyerang " + hero2.getName()+"\n");
             System.out.println(hero1.getName() + " menyerang sebesar " + hero1.getAttack());
-            System.out.println(hero2.getName() + " memiliki pertahanan sebesar " + hero2.getDefense());
+            System.out.println(hero2.getName() + " memiliki pertahanan sebesar " + defense2_0);
             System.out.println("Health dari " + hero2.getName() + " saat ini " + hp2+"\n");
             if (hero2.getHp() == 0) {
                 win = hero1.getName();

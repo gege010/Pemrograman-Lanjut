@@ -5,7 +5,6 @@ public class classHero {
     private double defense;
 
     public classHero() {
-
     }
 
     public classHero(String inputName, double inputHp, double inputAttack, double inputDefense) {
