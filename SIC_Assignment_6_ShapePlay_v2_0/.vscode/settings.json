@@ -1,0 +1,7 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "sic.geometry.shapes.v2",
+        "sic.geometry.mains"
+    ]
+}
