@@ -19,7 +19,7 @@ public class Employee implements Payable {
         return salaryPerMonth - total;
     }
 
-    private String getInvoice() {
+    public String getInvoice() {
         String invoicesPrint = "";
         for (Invoice invoice : invoices) {
             invoicesPrint += invoice.toString();
